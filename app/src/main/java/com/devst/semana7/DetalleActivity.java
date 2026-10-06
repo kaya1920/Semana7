@@ -1,22 +1,19 @@
 package com.devst.semana7;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class FormActivity extends AppCompatActivity {
+public class DetalleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_segunda);
 
-        Button btnVolver = findViewById(R.id.btnVolver);
-        btnVolver.setOnClickListener(v -> {
-            Intent returnIntent = new Intent();
-            returnIntent.putExtra("RESP", "Datos recibidos OK");
-            setResult(RESULT_OK, returnIntent);
-            finish();
-        });
+        TextView tvMensaje = findViewById(R.id.tvMensajeDetalle);
+        String dato = getIntent().getStringExtra("EXTRA_MSG");
+        if(dato != null && tvMensaje != null) {
+            tvMensaje.setText(dato);
+        }
     }
 }
