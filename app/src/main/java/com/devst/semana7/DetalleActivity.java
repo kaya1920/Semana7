@@ -1,6 +1,7 @@
 package com.devst.semana7;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,5 +16,9 @@ public class DetalleActivity extends AppCompatActivity {
         if(dato != null && tvMensaje != null) {
             tvMensaje.setText(dato);
         }
+
+
+        Button btnVolver = findViewById(R.id.btnVolver);
+        btnVolver.setOnClickListener(v -> finish());
     }
 }

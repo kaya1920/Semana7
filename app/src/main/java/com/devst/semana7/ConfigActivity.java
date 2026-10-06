@@ -1,6 +1,7 @@
 package com.devst.semana7;
 
 import android.os.Bundle;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ConfigActivity extends AppCompatActivity {
@@ -13,6 +14,10 @@ public class ConfigActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("Ajustes");
         }
+
+
+        Button btnVolver = findViewById(R.id.btnVolver);
+        btnVolver.setOnClickListener(v -> finish());
     }
 
     @Override
